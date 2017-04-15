@@ -98,7 +98,7 @@ public class AgentServer extends Agent implements Vocabulary {
 
                case (ACLMessage.REQUEST):
 
-                  System.out.println("Request from " + msg.getSender().getLocalName());
+                  System.out.println("message srver :Request from " + msg.getSender().getLocalName());
 
                   if (action instanceof CreateCours)
                      addBehaviour(new HandleCreateCours(myAgent, msg));
@@ -110,7 +110,7 @@ public class AgentServer extends Agent implements Vocabulary {
 
                case (ACLMessage.QUERY_REF):
 
-                  System.out.println("Query from " + msg.getSender().getLocalName());
+                  System.out.println("message server : Query from " + msg.getSender().getLocalName());
 
                   if (action instanceof InformationCours)
                      addBehaviour(new HandleInformationCours(myAgent, msg));
@@ -143,7 +143,7 @@ public class AgentServer extends Agent implements Vocabulary {
             ContentElement content = getContentManager().extractContent(request);
             CreateCours ca = (CreateCours)((Action)content).getAction();
             Cours cours = new Cours();
-            String id = generateId();
+            int id = generateId();
             cours.setId_cours(idCnt);
             cours.setIntitule(ca.getIntitule());
             Result result = new Result((Action)content,  (Cours)cours);
@@ -206,6 +206,7 @@ public class AgentServer extends Agent implements Vocabulary {
       public void action() {
 
          try {
+
             ContentElement content = getContentManager().extractContent(query);
             InformationCours info = (InformationCours)((Action)content).getAction();
             Object obj = processInformation(info);
@@ -216,7 +217,7 @@ public class AgentServer extends Agent implements Vocabulary {
                Result result = new Result((Action)content, obj);
                getContentManager().fillContent(reply, result);
                send(reply);
-               System.out.println("Information processed.");
+               System.out.println("information du cours " + obj  + "from server");
             }
          }
          catch(Exception ex) { ex.printStackTrace(); }
@@ -241,10 +242,11 @@ public class AgentServer extends Agent implements Vocabulary {
 
    Object processInformation(InformationCours info) {
 // -------------------------------------------
-
+      System.out.println("size :"+  listcours.size());
+      System.out.println("id cours :" +info.getId_Cours());
       Cours crs = (Cours)listcours.get(info.getId_Cours());
       if (crs == null) return newProblem(COURS_INTROUVABLE);
-
+      return crs;
      /* java.util.Date date = new java.util.Date();
       Operation op = new Operation();              // <-- Apply admin charge
       op.setType(ADMIN);
@@ -259,7 +261,7 @@ public class AgentServer extends Agent implements Vocabulary {
 
       if (info.getType() == BALANCE) return crs;
       if (info.getType() == OPERATIONS) return l;*/
-      return crs;
+
    }
 
 //--------------------------- Utility methods ----------------------------//
@@ -284,10 +286,10 @@ public class AgentServer extends Agent implements Vocabulary {
       return prob;
    }
 
-   String generateId() {
+   int generateId() {
 // ---------------------
-
-      return hashCode() + "" + (idCnt++);
+      idCnt++;
+      return idCnt;
    }
 
     

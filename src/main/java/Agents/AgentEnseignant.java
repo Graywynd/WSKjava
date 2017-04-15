@@ -40,19 +40,23 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
 
          addBehaviour(new OneShotBehaviour() {
 
-          @Override
-          public void action() {
-              createCours("cours1");
-          }
-      });
-         
+
+             @Override
+             public void action() {
+                 createCours("cours1");
+
+             }
+         });
+
          addBehaviour(new OneShotBehaviour() {
 
-          @Override
-          public void action() {
-              infoCours(1);
-          }
-      });
+             @Override
+             public void action() {
+                 infoCours(1);
+             }
+         });
+
+
          
      
       
@@ -70,7 +74,7 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
   public void createCours(String intitulecours) {
 // ----------------------  Process to the server agent the request
 //                         to create a new account
-
+        System.out.println("create cours from enseignant");
       CreateCours ca = new CreateCours();
       ca.setIntitule(intitulecours);
       sendMessage(ACLMessage.REQUEST, ca);
@@ -148,7 +152,7 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
 
                      Cours crs = (Cours) result.getItems().get(0) ;
 
-                     System.out.println("Cours retourné"+crs.getIntitule());
+                     System.out.println("message enseignant : Cours retourné "+crs.getIntitule());
                   //}
                   //else if (result.getAction()  instanceof List) {
                    //  alertGui(result.getItems());

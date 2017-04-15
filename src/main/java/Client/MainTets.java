@@ -29,7 +29,7 @@ public class MainTets {
 		p.setParameter(Profile.GUI, "true");
 		ContainerController cc = rt.createMainContainer(p);
 		AgentController ac;
-                AgentController ac2;
+
 		try {
 			ac = cc.createNewAgent("Server","Agents.AgentServer", null);
 			ac.start();
@@ -38,15 +38,19 @@ public class MainTets {
 			e1.printStackTrace();
 			
 		}
-                
+
+
+
                 try {
-			ac2 = cc.createNewAgent("Enseignant","Agents.AgentEnseignant", null);
-			ac2.start();
-                        
+			ac = cc.createNewAgent("Enseignant","Agents.AgentEnseignant", null);
+			ac.start();
+
+
+
 		} catch (StaleProxyException e1) {
-			
+
 			e1.printStackTrace();
-			
+
 		}
                 
                 
