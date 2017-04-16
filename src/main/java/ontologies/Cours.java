@@ -33,7 +33,7 @@ public class Cours implements Concept {
     @Column(name="DureeCours")
     private int duree;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( {
             @JoinColumn(name="Enseignant_idEnseignant", referencedColumnName="idEnseignant", nullable=true) } )
     private Enseignant enseignant ;
@@ -122,5 +122,15 @@ public class Cours implements Concept {
 
     public void setCoursetudiant(Set<CoursEtudiant> coursetudiant) {
         this.coursetudiant = coursetudiant;
+    }
+
+    @Override
+    public String toString() {
+        return "Cours{" +
+                "id_cours=" + id_cours +
+                ", intitule='" + intitule + '\'' +
+                ", duree=" + duree +
+                ", enseignant=" + enseignant.getNom_enseignant() +
+                '}';
     }
 }

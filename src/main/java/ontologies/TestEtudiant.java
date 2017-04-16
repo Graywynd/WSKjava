@@ -1,5 +1,7 @@
 package ontologies;
 
+import jade.content.Concept;
+
 import javax.persistence.*;
 
 /**
@@ -10,7 +12,7 @@ import javax.persistence.*;
 @Table(name="test_has_etudiant"
         ,catalog="wskdb"
 )
-public class TestEtudiant {
+public class TestEtudiant implements Concept {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

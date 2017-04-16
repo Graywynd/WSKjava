@@ -6,6 +6,8 @@
 package Agents;
 
 
+import Repositories.CoursRepository;
+import Repositories.ICoursRepository;
 import jade.core.*;
 import jade.core.behaviours.*;
 import jade.domain.*;
@@ -25,6 +27,8 @@ import ontologies.*;
  * @author saif
  */
 public class AgentServer extends Agent implements Vocabulary {
+
+   private ICoursRepository repo = new CoursRepository();
     
    private int idCnt = 0;
    private Map listcours = new HashMap();
@@ -147,14 +151,13 @@ public class AgentServer extends Agent implements Vocabulary {
             int id = generateId();
             cours.setId_cours(idCnt);
             cours.setIntitule(ca.getIntitule());
+            cours.setEnseignant(ca.getEnseignant());
             Result result = new Result((Action)content,  (Cours)cours);
             ACLMessage reply = request.createReply();
             reply.setPerformative(ACLMessage.INFORM);
             getContentManager().fillContent(reply, result);
             send(reply);
-            
-            listcours.put(id, cours);
-            //operations.put(id, new ArrayList());
+            repo.create(cours);
             System.out.println("Cours [" + cours.getIntitule() + " # " +
                                cours.getId_cours() + "] created!");
          }
@@ -247,9 +250,9 @@ public class AgentServer extends Agent implements Vocabulary {
 
    Object processInformation(InformationCours info) {
 // -------------------------------------------
-      System.out.println("size :"+  listcours.size());
-      System.out.println("id cours :" +info.getId_Cours());
-      Cours crs = (Cours)listcours.get(info.getId_Cours());
+
+   //   Cours crs = (Cours)listcours.get(info.getId_Cours());
+      Cours crs = repo.findById(info.getId_Cours());
       if (crs == null) return newProblem(COURS_INTROUVABLE);
       return crs;
 

@@ -1,5 +1,7 @@
 package ontologies;
 
+import jade.content.Concept;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,11 +14,11 @@ import java.util.Set;
 @Table(name="etudiant"
         ,catalog="wskdb"
 )
-public class Etudiant {
+public class Etudiant  implements Concept {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id_etudiant", unique=true, nullable=false)
+    @Column(name="idEtudiant", unique=true, nullable=false)
     int id_etudiant ;
 
     @Column(name="NomEtudiant", length=450)

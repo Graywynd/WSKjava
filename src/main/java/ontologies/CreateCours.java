@@ -13,6 +13,7 @@ public class CreateCours implements AgentAction {
     
     private String intitule;
     private int duree;
+    private Enseignant enseignant ;
 
     /**
      * @return the intitule
@@ -41,6 +42,13 @@ public class CreateCours implements AgentAction {
     public void setDuree(int duree) {
         this.duree = duree;
     }
-    
-    
+
+
+    public Enseignant getEnseignant() {
+        return enseignant;
+    }
+
+    public void setEnseignant(Enseignant enseignant) {
+        this.enseignant = enseignant;
+    }
 }

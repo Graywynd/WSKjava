@@ -1,5 +1,7 @@
 package ontologies;
 
+import jade.content.Concept;
+
 import javax.persistence.*;
 
 /**
@@ -10,12 +12,12 @@ import javax.persistence.*;
 @Table(name="cours_has_etudiant"
         ,catalog="wskdb"
 )
-public class CoursEtudiant {
+public class CoursEtudiant implements Concept {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="idCoursEtudiant", unique=true, nullable=false)
-    int id_cous_etudiant ;
+    int id_cours_etudiant ;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumns( {
@@ -29,11 +31,11 @@ public class CoursEtudiant {
 
 
     public int getId_cous_etudiant() {
-        return id_cous_etudiant;
+        return id_cours_etudiant;
     }
 
     public void setId_cous_etudiant(int id_cous_etudiant) {
-        this.id_cous_etudiant = id_cous_etudiant;
+        this.id_cours_etudiant = id_cous_etudiant;
     }
 
     public Cours getCours_asso() {

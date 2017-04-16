@@ -5,12 +5,16 @@
  */
 package Client;
 
+import Repositories.CoursRepository;
+import Repositories.ICoursRepository;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
 import jade.wrapper.AgentController;
 import jade.wrapper.ContainerController;
 import jade.wrapper.StaleProxyException;
+import ontologies.Cours;
+import ontologies.Enseignant;
 
 /**
  *
@@ -52,6 +56,22 @@ public class MainTets {
 			e1.printStackTrace();
 
 		}
+
+		/*ICoursRepository repo = new CoursRepository();
+		Enseignant enseignant = new Enseignant();
+		enseignant.setId_enseignant(1);
+		enseignant.setNom_enseignant("m romdhani");
+		Cours cours = new Cours();
+		cours.setId_cours(2);
+		cours.setDuree(10);
+		cours.setIntitule("cours1");
+		cours.setEnseignant(enseignant);
+		repo.create(cours);
+		Cours cours2 ;
+		cours2 = repo.findById(2);
+		System.out.println(cours2);*/
+
+
                 
                 
                 

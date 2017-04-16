@@ -37,7 +37,7 @@ public class Test implements Concept {
     private Cours cours_test ;
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="test_asso")
-    private Set<TestEtudiant> testetudiant = new HashSet<TestEtudiant>(0);
+    private Set<TestEtudiant> testetudiants = new HashSet<TestEtudiant>(0);
 
     public int getId_test() {
         return id_test;
@@ -72,10 +72,10 @@ public class Test implements Concept {
     }
 
     public Set<TestEtudiant> getTestetudiant() {
-        return testetudiant;
+        return testetudiants;
     }
 
     public void setTestetudiant(Set<TestEtudiant> testetudiant) {
-        this.testetudiant = testetudiant;
+        this.testetudiants = testetudiant;
     }
 }

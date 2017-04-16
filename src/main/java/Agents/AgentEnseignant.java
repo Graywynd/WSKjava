@@ -38,21 +38,13 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
       getContentManager().registerLanguage(codec);
       getContentManager().registerOntology(ontology);
 
-         addBehaviour(new OneShotBehaviour() {
 
-
-             @Override
-             public void action() {
-                 createCours("cours1");
-
-             }
-         });
 
          addBehaviour(new OneShotBehaviour() {
 
              @Override
              public void action() {
-                 infoCours(1);
+                 infoCours(2);
              }
          });
 
@@ -77,6 +69,10 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
         System.out.println("create cours from enseignant");
       CreateCours ca = new CreateCours();
       ca.setIntitule(intitulecours);
+      Enseignant enseignant = new Enseignant();
+      enseignant.setId_enseignant(1);
+      enseignant.setNom_enseignant("m romdhani");
+      ca.setEnseignant(enseignant);
       sendMessage(ACLMessage.REQUEST, ca);
       
    }
