@@ -23,8 +23,12 @@ public interface Vocabulary {
    public static final String COURS_ID = "Id_cours";
    public static final String COURS_INTITULE = "intitule";
    public static final String COURS_DUREE = "duree";
-   public static final String COURS_ID_ENSG = "id_ensgn";
-   
+   public static final String COURS_ENSEIGNANT = "enseignant";
+   public static final String COURS_SEANCES = "seances";
+   public static final String COURS_TESTS = "tests";
+   public static final String COURS_COURSETUDIANT= "coursetudiant";
+
+
    public static final String TEST = "Test";
    public static final String TEST_ID = "id";
    public static final String TEST_NOM = "nom";
@@ -54,4 +58,6 @@ public interface Vocabulary {
    public static final String INFORMATION_COURS = "Information_cours";
    public static final String INFORMATION_COURS_TYPE = "type";
    public static final String INFORMATION_COURS_ID_COURS="Id_cours";
+
+
 }

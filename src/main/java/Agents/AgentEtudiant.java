@@ -108,16 +108,16 @@ public class AgentEtudiant extends Agent implements Vocabulary,IAgentEtudiant {
       }
 
       public void action() {
-           /*
+
          ACLMessage msg = receive(MessageTemplate.MatchSender(server));
 
          if (msg == null) { block(); return; }
 
          if (msg.getPerformative() == ACLMessage.NOT_UNDERSTOOD){
-           // alertGui("Response from server: NOT UNDERSTOOD");
+             System.out.println("reponse provenant du serveur dans -etudiant- : NOT UNDERSTOOD");
          }
          else if (msg.getPerformative() != ACLMessage.INFORM){
-           // alertGui("\nUnexpected msg from server!");
+             System.out.println("Unexpected Message ");
          }
          else {
             try {
@@ -130,29 +130,26 @@ public class AgentEtudiant extends Agent implements Vocabulary,IAgentEtudiant {
                   if (result.getAction() instanceof Problem) {
 
                      Problem prob = (Problem)result.getAction();
-                     alertGui(prob);
+                      System.out.println("Problem : "+prob.getMsg());
                   }
-                  else if (result.getAction()  instanceof Account) {
+                  else if (result.getAction()  instanceof Cours) {
 
-                     Account acc = (Account) result.getAction() ;
+                      Cours crs = (Cours) result.getItems().get(0) ;
+                      System.out.println("Le cours  "+crs.getIntitule() + "a été affecté a l'etudiant");
 
-                     if (command == NEW_ACCOUNT) {
-                        accounts.add(acc);
-                     }
-                     alertGui(acc);
+
                   }
-                  else if (result.getAction()  instanceof List) {
-                     alertGui(result.getItems());
-                  }
-                  else alertGui("\nUnexpected result from server!");
+
+
+                  else System.out.println("\nUnexpected result from server!");
                }
                else {
-                  alertGui("\nUnable de decode response from server!");
+                 System.out.println("\nUnable de decode response from server!");
                }
             }
             catch (Exception e) { e.printStackTrace(); }
          }
-         resetStatusGui(); */
+
          finished = true;
       }
 

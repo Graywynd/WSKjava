@@ -151,11 +151,8 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
                   else if (result.getItems().get(0)  instanceof Cours) {
 
                      Cours crs = (Cours) result.getItems().get(0) ;
-
                      System.out.println("message enseignant : Cours retourné "+crs.getIntitule());
-                  //}
-                  //else if (result.getAction()  instanceof List) {
-                   //  alertGui(result.getItems());
+
                   }
                   else System.out.println("\nUnexpected result from server!");
                }

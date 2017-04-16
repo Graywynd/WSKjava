@@ -5,6 +5,7 @@
  */
 package Agents;
 
+
 import jade.core.*;
 import jade.core.behaviours.*;
 import jade.domain.*;
@@ -102,8 +103,8 @@ public class AgentServer extends Agent implements Vocabulary {
 
                   if (action instanceof CreateCours)
                      addBehaviour(new HandleCreateCours(myAgent, msg));
-                  //else if (action instanceof MakeOperation)
-                  //   addBehaviour(new HandleOperation(myAgent, msg));
+                  else if (action instanceof AffecterCours)
+                    addBehaviour(new HandleAffecterCours(myAgent, msg));
                   else
                      replyNotUnderstood(msg);
                   break;
@@ -161,36 +162,7 @@ public class AgentServer extends Agent implements Vocabulary {
       }
    }
 
-  /* class HandleOperation extends OneShotBehaviour {
-// ------------------------------------------------  Handler for an Operation request
 
-      private ACLMessage request;
-
-      HandleOperation(Agent a, ACLMessage request) {
-
-         super(a);
-         this.request = request;
-      }
-
-      public void action() {
-
-         try {
-            ContentElement content = getContentManager().extractContent(request);
-            MakeOperation mo = (MakeOperation)((Action)content).getAction();
-            Object obj = processOperation(mo);
-            if (obj == null) replyNotUnderstood(request);
-            else {
-               ACLMessage reply = request.createReply();
-               reply.setPerformative(ACLMessage.INFORM);
-               Result result = new Result((Action)content, (List) obj);
-               getContentManager().fillContent(reply, result);
-               send(reply);
-               System.out.println("Operation processed.");
-            }
-         }
-         catch(Exception ex) { ex.printStackTrace(); }
-      }
-   } */
 
    class HandleInformationCours extends OneShotBehaviour {
 // --------------------------------------------------  Handler for an Information query
@@ -222,7 +194,40 @@ public class AgentServer extends Agent implements Vocabulary {
          }
          catch(Exception ex) { ex.printStackTrace(); }
       }
-   } 
+   }
+
+
+   class HandleAffecterCours extends OneShotBehaviour {
+// --------------------------------------------------  Handler for an Information query
+
+      private ACLMessage query;
+
+      HandleAffecterCours(Agent a, ACLMessage query) {
+
+         super(a);
+         this.query = query;
+      }
+
+      public void action() {
+
+         try {
+            ContentElement content = getContentManager().extractContent(query);
+            AffecterCours cours_aff = (AffecterCours)((Action)content).getAction();
+            Object obj = processAffectationCours(cours_aff);
+            if (obj == null) replyNotUnderstood(query);
+            else {
+               ACLMessage reply = query.createReply();
+               reply.setPerformative(ACLMessage.INFORM);
+               Result result = new Result((Action)content, obj);
+               getContentManager().fillContent(reply, result);
+               send(reply);
+               System.out.println("affectation cours de serveur");
+            }
+
+         }
+         catch(Exception ex) { ex.printStackTrace(); }
+      }
+   }
 
    void replyNotUnderstood(ACLMessage msg) {
 // -----------------------------------------
@@ -247,21 +252,13 @@ public class AgentServer extends Agent implements Vocabulary {
       Cours crs = (Cours)listcours.get(info.getId_Cours());
       if (crs == null) return newProblem(COURS_INTROUVABLE);
       return crs;
-     /* java.util.Date date = new java.util.Date();
-      Operation op = new Operation();              // <-- Apply admin charge
-      op.setType(ADMIN);
-      op.setAmount(info.getType()==BALANCE ? BAL_CHARGE : OPER_CHARGE);
-      acc.setBalance(acc.getBalance() - op.getAmount());
-      op.setBalance(acc.getBalance());
-      op.setAccountId(acc.getId());
-      op.setDate(date);
-      List l = (List)operations.get(acc.getId());
-      l.add(op);
-      operations.put(acc.getId(), l);
 
-      if (info.getType() == BALANCE) return crs;
-      if (info.getType() == OPERATIONS) return l;*/
 
+   }
+
+   Object processAffectationCours(AffecterCours cours_aff){
+      //traitement pour ajouter un etudiant a un cours
+      return null ;
    }
 
 //--------------------------- Utility methods ----------------------------//

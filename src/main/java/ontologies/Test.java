@@ -6,57 +6,76 @@
 package ontologies;
 import jade.content.*;
 
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author saif
  */
+@Entity
+@Table(name="test"
+        ,catalog="wskdb"
+)
 public class Test implements Concept {
-    
-    private int id;
-    private int id_cours;
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="idTest", unique=true, nullable=false)
+    private int id_test;
+
+    @Column(name="NomTest", length=45)
     private String nom_test;
-    private int duree;
 
-    /**
-     * @return the id_cours
-     */
-    public int getId_cours() {
-        return id_cours;
+    @Column(name="DureeTest", length=45)
+    private String duree_test;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumns( {
+            @JoinColumn(name="Cours_idCours", referencedColumnName="idCours", nullable=true) } )
+    private Cours cours_test ;
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="test_asso")
+    private Set<TestEtudiant> testetudiant = new HashSet<TestEtudiant>(0);
+
+    public int getId_test() {
+        return id_test;
     }
 
-    /**
-     * @param id_cours the id_cours to set
-     */
-    public void setId_cours(int id_cours) {
-        this.id_cours = id_cours;
+    public void setId_test(int id_test) {
+        this.id_test = id_test;
     }
 
-    /**
-     * @return the nom_test
-     */
     public String getNom_test() {
         return nom_test;
     }
 
-    /**
-     * @param nom_test the nom_test to set
-     */
     public void setNom_test(String nom_test) {
         this.nom_test = nom_test;
     }
 
-    /**
-     * @return the duree
-     */
-    public int getDuree() {
-        return duree;
+    public String getDuree_test() {
+        return duree_test;
     }
 
-    /**
-     * @param duree the duree to set
-     */
-    public void setDuree(int duree) {
-        this.duree = duree;
+    public void setDuree_test(String duree_test) {
+        this.duree_test = duree_test;
     }
-    
+
+    public Cours getCours_test() {
+        return cours_test;
+    }
+
+    public void setCours_test(Cours cours_test) {
+        this.cours_test = cours_test;
+    }
+
+    public Set<TestEtudiant> getTestetudiant() {
+        return testetudiant;
+    }
+
+    public void setTestetudiant(Set<TestEtudiant> testetudiant) {
+        this.testetudiant = testetudiant;
+    }
 }

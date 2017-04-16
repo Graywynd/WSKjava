@@ -5,17 +5,48 @@
  */
 package ontologies;
 import jade.content.*;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.*;
+
 
 /**
  *
  * @author saif
  */
+
+
+@Entity
+@Table(name="cours"
+        ,catalog="wskdb"
+)
 public class Cours implements Concept {
-    
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="idCours", unique=true, nullable=false)
     private int id_cours;
+
+    @Column(name="IntituleCours", length=450)
     private String intitule;
+
+    @Column(name="DureeCours")
     private int duree;
-    private int id_ensgn;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumns( {
+            @JoinColumn(name="Enseignant_idEnseignant", referencedColumnName="idEnseignant", nullable=true) } )
+    private Enseignant enseignant ;
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="cours_seance")
+    private Set<Seance> seances = new HashSet<Seance>(0);
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="cours_test")
+    private Set<Test> tests = new HashSet<Test>(0);
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="cours_asso")
+    private Set<CoursEtudiant> coursetudiant = new HashSet<CoursEtudiant>(0);
+
 
     /**
      * @return the intitule
@@ -48,20 +79,7 @@ public class Cours implements Concept {
     /**
      * @return the id_ensgn
      */
-    public int getId_ensgn() {
-        return id_ensgn;
-    }
 
-    /**
-     * @param id_ensgn the id_ensgn to set
-     */
-    public void setId_ensgn(int id_ensgn) {
-        this.id_ensgn = id_ensgn;
-    }
-
-    /**
-     * @return the id_cours
-     */
     public int getId_cours() {
         return id_cours;
     }
@@ -72,8 +90,37 @@ public class Cours implements Concept {
     public void setId_cours(int id_cours) {
         this.id_cours = id_cours;
     }
-    
-    
-    
-    
+
+
+    public Enseignant getEnseignant() {
+        return enseignant;
+    }
+
+    public void setEnseignant(Enseignant enseignant) {
+        this.enseignant = enseignant;
+    }
+
+    public Set<Seance> getSeances() {
+        return seances;
+    }
+
+    public void setSeances(Set<Seance> seances) {
+        this.seances = seances;
+    }
+
+    public Set<Test> getTests() {
+        return tests;
+    }
+
+    public void setTests(Set<Test> tests) {
+        this.tests = tests;
+    }
+
+    public Set<CoursEtudiant> getCoursetudiant() {
+        return coursetudiant;
+    }
+
+    public void setCoursetudiant(Set<CoursEtudiant> coursetudiant) {
+        this.coursetudiant = coursetudiant;
+    }
 }
