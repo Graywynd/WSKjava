@@ -5,6 +5,8 @@
  */
 package Agents;
 
+import Repositories.EnseignantRepository;
+import Repositories.IEnseignantRepository;
 import jade.core.*;
 import jade.core.behaviours.*;
 import jade.domain.*;
@@ -18,7 +20,11 @@ import jade.content.onto.basic.*;
 import jade.util.leap.*;
 import jade.gui.*;
 
+import jade.util.leap.ArrayList;
 import ontologies.*;
+
+import java.util.*;
+import java.util.List;
 
 
 /**
@@ -26,7 +32,8 @@ import ontologies.*;
  * @author saif
  */
 public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignant{
-    
+
+    IEnseignantRepository repo_enseignant = new EnseignantRepository();
     private AID server;
     private Codec codec = new SLCodec();
    private Ontology ontology = OntologyWSK.getInstance();
@@ -44,7 +51,7 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
 
              @Override
              public void action() {
-                 infoCours(2);
+                 infoCours(4);
              }
          });
 
@@ -63,20 +70,18 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
    
    
     @Override
-  public void createCours(String intitulecours) {
+  public void createCours(String intitulecours , int id_enseignant) {
 // ----------------------  Process to the server agent the request
 //                         to create a new account
         System.out.println("create cours from enseignant");
       CreateCours ca = new CreateCours();
       ca.setIntitule(intitulecours);
-      Enseignant enseignant = new Enseignant();
-      enseignant.setId_enseignant(1);
-      enseignant.setNom_enseignant("m romdhani");
-      ca.setEnseignant(enseignant);
+      ca.setEnseignant(repo_enseignant.findById(id_enseignant));
       sendMessage(ACLMessage.REQUEST, ca);
       
    }
-  
+
+    @Override
   public void infoCours(int idcours) {
      
       InformationCours ic = new InformationCours();
@@ -84,6 +89,17 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
       sendMessage(ACLMessage.QUERY_REF, ic);
       
   }
+
+    @Override
+  public void listCours(int id_enseignant){
+
+         ListCoursEnseignant lc = new ListCoursEnseignant();
+         lc.setId_enseignant(id_enseignant);
+         sendMessage(ACLMessage.QUERY_REF, lc);
+
+
+  }
+
    
    
    
@@ -139,15 +155,25 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
                   Result result = (Result) content;
                   
 
-                  if (result.getItems().get(0) instanceof Problem) {
+                  if (result.getValue() instanceof Problem) {
 
                      Problem prob = (Problem)result.getItems().get(0);
                      System.out.println("Problem : "+prob.getMsg());
                   }
-                  else if (result.getItems().get(0)  instanceof Cours) {
+                  else if (result.getValue()  instanceof Cours) {
 
-                     Cours crs = (Cours) result.getItems().get(0) ;
-                     System.out.println("message enseignant : Cours retourné "+crs.getIntitule());
+                      Cours crs = (Cours) result.getItems().get(0) ;
+                      System.out.println("message enseignant : Cours retourné "+crs.getIntitule());
+
+                  }
+                  else if (result.getValue()  instanceof ArrayList) {
+
+
+                      ArrayList lcs = (ArrayList) result.getValue() ;
+                      java.util.ArrayList<Cours> L = (java.util.ArrayList<Cours>)lcs.toList();
+                      for (Cours c:L) {
+                          System.out.println(c);
+                      }
 
                   }
                   else System.out.println("\nUnexpected result from server!");

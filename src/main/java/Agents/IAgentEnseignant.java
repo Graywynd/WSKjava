@@ -11,6 +11,10 @@ package Agents;
  */
 public interface IAgentEnseignant {
     
-    void createCours(String intitulecours);
+    void createCours(String intitulecours , int id_enseignant);
+
+    public void infoCours(int idcours);
+
+    public void listCours(int id_enseignant);
     
 }

@@ -40,6 +40,14 @@ public class AgentEtudiant extends Agent implements Vocabulary,IAgentEtudiant {
       getContentManager().registerLanguage(codec);
       getContentManager().registerOntology(ontology);
 
+         addBehaviour(new OneShotBehaviour() {
+
+             @Override
+             public void action() {
+                 AssisterCours(2,1);
+             }
+         });
+
      
       
    }
@@ -52,13 +60,12 @@ public class AgentEtudiant extends Agent implements Vocabulary,IAgentEtudiant {
     }
    
      @Override
-   public void AssisterCours() {
+   public void AssisterCours(int id_cours, int id_etudiant) {
 // ----------------------  Process to the server agent the request
 //                         to create a new account
-       
-       AffecterCours ac = new AffecterCours();
-      ac.setId_etudiant(1);
-      ac.setId_cours(1);
+      AffecterCours ac = new AffecterCours();
+      ac.setId_etudiant(id_etudiant);
+      ac.setId_cours(id_cours);
       sendMessage(ACLMessage.REQUEST, ac);
 
    }
@@ -127,20 +134,24 @@ public class AgentEtudiant extends Agent implements Vocabulary,IAgentEtudiant {
 
                   Result result = (Result) content;
 
-                  if (result.getAction() instanceof Problem) {
+                  if (result.getValue() instanceof Problem) {
 
                      Problem prob = (Problem)result.getAction();
                       System.out.println("Problem : "+prob.getMsg());
                   }
-                  else if (result.getAction()  instanceof Cours) {
+                  else if (result.getValue()  instanceof Cours) {
 
                       Cours crs = (Cours) result.getItems().get(0) ;
                       System.out.println("Le cours  "+crs.getIntitule() + "a été affecté a l'etudiant");
 
 
+                  }else if (result.getValue()  instanceof String) {
+
+
+                      System.out.println(result.getValue());
+
+
                   }
-
-
                   else System.out.println("\nUnexpected result from server!");
                }
                else {

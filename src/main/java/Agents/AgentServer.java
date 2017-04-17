@@ -6,7 +6,9 @@
 package Agents;
 
 
+import Repositories.CoursEtudiantRepository;
 import Repositories.CoursRepository;
+import Repositories.ICoursEtudiantRepository;
 import Repositories.ICoursRepository;
 import jade.core.*;
 import jade.core.behaviours.*;
@@ -20,7 +22,13 @@ import jade.content.onto.*;
 import jade.content.onto.basic.*;
 import jade.util.leap.*;
 
+
+import jade.util.leap.ArrayList;
+import jade.util.leap.HashMap;
+import jade.util.leap.Map;
 import ontologies.*;
+
+import java.util.*;
 
 /**
  *
@@ -29,6 +37,7 @@ import ontologies.*;
 public class AgentServer extends Agent implements Vocabulary {
 
    private ICoursRepository repo = new CoursRepository();
+   private ICoursEtudiantRepository repo_coursetudiant = new CoursEtudiantRepository();
     
    private int idCnt = 0;
    private Map listcours = new HashMap();
@@ -119,6 +128,8 @@ public class AgentServer extends Agent implements Vocabulary {
 
                   if (action instanceof InformationCours)
                      addBehaviour(new HandleInformationCours(myAgent, msg));
+                  else if (action instanceof ListCoursEnseignant)
+                     addBehaviour(new HandleListCoursEnseignant(myAgent, msg));
                   else
                      replyNotUnderstood(msg);
                   break;
@@ -148,8 +159,7 @@ public class AgentServer extends Agent implements Vocabulary {
             ContentElement content = getContentManager().extractContent(request);
             CreateCours ca = (CreateCours)((Action)content).getAction();
             Cours cours = new Cours();
-            int id = generateId();
-            cours.setId_cours(idCnt);
+
             cours.setIntitule(ca.getIntitule());
             cours.setEnseignant(ca.getEnseignant());
             Result result = new Result((Action)content,  (Cours)cours);
@@ -164,7 +174,6 @@ public class AgentServer extends Agent implements Vocabulary {
          catch(Exception ex) { ex.printStackTrace(); }
       }
    }
-
 
 
    class HandleInformationCours extends OneShotBehaviour {
@@ -216,17 +225,57 @@ public class AgentServer extends Agent implements Vocabulary {
          try {
             ContentElement content = getContentManager().extractContent(query);
             AffecterCours cours_aff = (AffecterCours)((Action)content).getAction();
-            Object obj = processAffectationCours(cours_aff);
-            if (obj == null) replyNotUnderstood(query);
-            else {
+            Boolean res = repo_coursetudiant.AffecterEtudiant_Cours(cours_aff.getId_cours(),cours_aff.getId_etudiant());
+            if (!res){
+               String reponse = "Affectation du cours d'id "+cours_aff.getId_cours()+" à l'etudiant d'id "+cours_aff.getId_etudiant()+" a échoue";
                ACLMessage reply = query.createReply();
                reply.setPerformative(ACLMessage.INFORM);
-               Result result = new Result((Action)content, obj);
+               Result result = new Result((Action)content, (String)reponse);
+               getContentManager().fillContent(reply, result);
+               send(reply);
+               System.out.println("affectation cours de serveur");
+            }
+            else {
+               String reponse = "Cours d'id "+cours_aff.getId_cours()+" a ete affecté à l'etudiant d'id"+cours_aff.getId_etudiant();
+               ACLMessage reply = query.createReply();
+               reply.setPerformative(ACLMessage.INFORM);
+               Result result = new Result((Action)content, (String)reponse);
                getContentManager().fillContent(reply, result);
                send(reply);
                System.out.println("affectation cours de serveur");
             }
 
+         }
+         catch(Exception ex) { ex.printStackTrace(); }
+      }
+   }
+
+   class HandleListCoursEnseignant extends OneShotBehaviour {
+// ----------------------------------------------------  Handler for a CreateAccount request
+
+      private ACLMessage request;
+
+      HandleListCoursEnseignant(Agent a, ACLMessage request) {
+
+         super(a);
+         this.request = request;
+      }
+
+      public void action() {
+
+         try {
+            ContentElement content = getContentManager().extractContent(request);
+            ListCoursEnseignant ca = (ListCoursEnseignant) ((Action)content).getAction();
+            java.util.ArrayList<Cours> listcours = null;
+            listcours = repo.findByEnseignant(ca.getId_enseignant());
+            ArrayList listcoursjade = new ArrayList(listcours);
+            Result result = new Result((Action)content,  (ArrayList)listcoursjade);
+            ACLMessage reply = request.createReply();
+            reply.setPerformative(ACLMessage.INFORM);
+            getContentManager().fillContent(reply, result);
+            send(reply);
+
+            System.out.println("List cours retournée");
          }
          catch(Exception ex) { ex.printStackTrace(); }
       }

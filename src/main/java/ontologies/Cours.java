@@ -5,6 +5,8 @@
  */
 package ontologies;
 import jade.content.*;
+
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
@@ -20,7 +22,7 @@ import javax.persistence.*;
 @Table(name="cours"
         ,catalog="wskdb"
 )
-public class Cours implements Concept {
+public class Cours implements Concept,Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

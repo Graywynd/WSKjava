@@ -5,6 +5,7 @@
  */
 package Client;
 
+import Repositories.CoursEtudiantRepository;
 import Repositories.CoursRepository;
 import Repositories.ICoursRepository;
 import jade.core.Profile;
@@ -15,6 +16,7 @@ import jade.wrapper.ContainerController;
 import jade.wrapper.StaleProxyException;
 import ontologies.Cours;
 import ontologies.Enseignant;
+import java.util.List;
 
 /**
  *
@@ -27,7 +29,7 @@ public class MainTets {
      */
     public static void main(String[] args) {
       
-        Runtime rt = Runtime.instance();
+     Runtime rt = Runtime.instance();
 		Profile p = new ProfileImpl();
 		p.setParameter(Profile.MAIN_HOST, "localhost");
 		p.setParameter(Profile.GUI, "true");
@@ -45,31 +47,16 @@ public class MainTets {
 
 
 
-                try {
-			ac = cc.createNewAgent("Enseignant","Agents.AgentEnseignant", null);
-			ac.start();
 
 
 
-		} catch (StaleProxyException e1) {
+		/*CoursEtudiantRepository repo = new CoursEtudiantRepository();
 
-			e1.printStackTrace();
 
-		}
 
-		/*ICoursRepository repo = new CoursRepository();
-		Enseignant enseignant = new Enseignant();
-		enseignant.setId_enseignant(1);
-		enseignant.setNom_enseignant("m romdhani");
-		Cours cours = new Cours();
-		cours.setId_cours(2);
-		cours.setDuree(10);
-		cours.setIntitule("cours1");
-		cours.setEnseignant(enseignant);
-		repo.create(cours);
-		Cours cours2 ;
-		cours2 = repo.findById(2);
-		System.out.println(cours2);*/
+
+
+		System.out.println(repo.AffecterEtudiant_Cours(1,1)); */
 
 
                 

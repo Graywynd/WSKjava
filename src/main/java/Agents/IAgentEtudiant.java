@@ -11,7 +11,7 @@ package Agents;
  */
 public interface IAgentEtudiant {
     
-    void AssisterCours();
+    void AssisterCours(int id_cours, int id_etudiant);
     
    void PasserTest();
     

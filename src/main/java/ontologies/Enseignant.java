@@ -43,24 +43,25 @@ public class Enseignant  implements Concept {
     @OneToMany(fetch=FetchType.LAZY, mappedBy="enseignant")
     private Set<Cours> cours = new HashSet<Cours>(0);
 
-    public Set<Cours> getCours() {
-        return cours;
-    }
 
     public int getId_enseignant() {
         return id_enseignant;
-    }
-
-    public String getNom_enseignant() {
-        return nom_enseignant;
     }
 
     public void setId_enseignant(int id_enseignant) {
         this.id_enseignant = id_enseignant;
     }
 
+    public String getNom_enseignant() {
+        return nom_enseignant;
+    }
+
     public void setNom_enseignant(String nom_enseignant) {
         this.nom_enseignant = nom_enseignant;
+    }
+
+    public Set<Cours> getCours() {
+        return cours;
     }
 
     public void setCours(Set<Cours> cours) {

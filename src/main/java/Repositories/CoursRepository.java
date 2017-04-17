@@ -1,11 +1,16 @@
 package Repositories;
 
 import ontologies.Cours;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import  java.util.*;
 
 
 import Utilities.HibernateUtil;
+import org.hibernate.criterion.Restrictions;
+
+import java.util.List;
 
 /**
  * Created by Khalil on 16/04/2017.
@@ -35,6 +40,7 @@ public class CoursRepository implements  ICoursRepository{
         return a_retourner;
     }
 
+    @Override
     public Cours findById(int id){
 
         Session session = HibernateUtil.createSessionFactory().openSession();
@@ -47,5 +53,27 @@ public class CoursRepository implements  ICoursRepository{
 
         return c;
     }
+
+    @Override
+    public ArrayList<Cours> findByEnseignant(int id_enseignant){
+
+        ArrayList<Cours> lc = null;
+
+        Session session = HibernateUtil.createSessionFactory().openSession();
+        Criteria cr = session.createCriteria(Cours.class);
+        cr.add(Restrictions.eq("enseignant.id_enseignant",id_enseignant));
+
+        // Work with the session
+         lc =  (ArrayList<Cours>) cr.list();
+
+        // Clean up !
+        session.close();
+
+        return lc;
+
+
+    }
+
+
 
 }
