@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52370795-dba7-4fe3-9564-40393a29adf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ontologies/Connaissance.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ontologies/Ressource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Agents/AgentEnseignant$WaitServerResponse$1.class" afterPath="$PROJECT_DIR$/target/classes/Agents/AgentEnseignant$WaitServerResponse$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Agents/AgentEtudiant$WaitServerResponse$1.class" afterPath="$PROJECT_DIR$/target/classes/Agents/AgentEtudiant$WaitServerResponse$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Agents/AgentPlanCours$WaitServerResponse$1.class" afterPath="$PROJECT_DIR$/target/classes/Agents/AgentPlanCours$WaitServerResponse$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Agents/AgentSuiviApprentissage$WaitServerResponse$1.class" afterPath="$PROJECT_DIR$/target/classes/Agents/AgentSuiviApprentissage$WaitServerResponse$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Agents/Vocabulary.class" afterPath="$PROJECT_DIR$/target/classes/Agents/Vocabulary.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Client/MainTets.class" afterPath="$PROJECT_DIR$/target/classes/Client/MainTets.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ontologies/Cours.class" afterPath="$PROJECT_DIR$/target/classes/ontologies/Cours.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ontologies/Etudiant.class" afterPath="$PROJECT_DIR$/target/classes/ontologies/Etudiant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ontologies/OntologyWSK.class" afterPath="$PROJECT_DIR$/target/classes/ontologies/OntologyWSK.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ontologies/PasserTest.class" afterPath="$PROJECT_DIR$/target/classes/ontologies/PasserTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APDescription.txt" afterPath="$PROJECT_DIR$/APDescription.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MTPs-Main-Container.txt" afterPath="$PROJECT_DIR$/MTPs-Main-Container.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Agents/Vocabulary.java" afterPath="$PROJECT_DIR$/src/main/java/Agents/Vocabulary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Client/MainTets.java" afterPath="$PROJECT_DIR$/src/main/java/Client/MainTets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ontologies/Cours.java" afterPath="$PROJECT_DIR$/src/main/java/ontologies/Cours.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ontologies/Etudiant.java" afterPath="$PROJECT_DIR$/src/main/java/ontologies/Etudiant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ontologies/OntologyWSK.java" afterPath="$PROJECT_DIR$/src/main/java/ontologies/OntologyWSK.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ontologies/PasserTest.java" afterPath="$PROJECT_DIR$/src/main/java/ontologies/PasserTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ontologies/Connaissance.java" afterPath="$PROJECT_DIR$/src/main/java/ontologies/Connaissance.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,7 +30,7 @@
       <file leaf-file-name="MainTets.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Client/MainTets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
+            <state relative-caret-position="357">
               <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
               <folding />
             </state>
@@ -60,11 +40,10 @@
       <file leaf-file-name="Cours.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Cours.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="476">
               <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1518#1529#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,7 +62,7 @@
       <file leaf-file-name="Etudiant.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Etudiant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
+            <state relative-caret-position="544">
               <caret line="40" column="68" lean-forward="false" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
               <folding>
                 <element signature="e#324#325#0" expanded="true" />
@@ -93,15 +72,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connaissance.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Connaissance.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Connaissance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="42" />
-              <folding>
-                <element signature="e#760#761#0" expanded="true" />
-                <element signature="e#798#799#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="182">
+              <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,7 +85,7 @@
       <file leaf-file-name="Ressource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Ressource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
+            <state relative-caret-position="425">
               <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding />
             </state>
@@ -119,8 +95,8 @@
       <file leaf-file-name="Seance.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Seance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+            <state relative-caret-position="391">
+              <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -129,8 +105,8 @@
       <file leaf-file-name="AgentEtudiant.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Agents/AgentEtudiant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+            <state relative-caret-position="323">
+              <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -139,14 +115,14 @@
       <file leaf-file-name="CoursEtudiantRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Repositories/CoursEtudiantRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="459">
               <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OntologyWSK.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OntologyWSK.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/OntologyWSK.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="491">
@@ -215,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ontologies/CreateCours.java" />
         <option value="$PROJECT_DIR$/src/main/java/Agents/AgentEnseignant.java" />
         <option value="$PROJECT_DIR$/src/main/java/ontologies/PasserTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ontologies/Connaissance.java" />
         <option value="$PROJECT_DIR$/src/main/java/Agents/Vocabulary.java" />
         <option value="$PROJECT_DIR$/src/main/java/ontologies/OntologyWSK.java" />
         <option value="$PROJECT_DIR$/src/main/java/Client/MainTets.java" />
@@ -223,6 +198,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ontologies/Etudiant.java" />
         <option value="$PROJECT_DIR$/src/main/java/ontologies/Cours.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ontologies/Connaissance.java" />
       </list>
     </option>
   </component>
@@ -254,6 +230,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,9 +411,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -828,12 +804,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -845,7 +819,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26617646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26617646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -857,6 +831,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="7.3529413E-4" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1174,7 +1149,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68">
           <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,7 +1162,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Repositories/CoursEtudiantRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="459">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
@@ -1196,7 +1170,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Client/MainTets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
+        <state relative-caret-position="357">
           <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
           <folding />
         </state>
@@ -1204,8 +1178,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Seance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        <state relative-caret-position="391">
+          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1213,25 +1187,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Connaissance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="e#760#761#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Ressource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
+        <state relative-caret-position="425">
           <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
           <folding />
         </state>
@@ -1239,7 +1202,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Etudiant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
+        <state relative-caret-position="544">
           <caret line="40" column="68" lean-forward="false" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
           <folding>
             <element signature="e#324#325#0" expanded="true" />
@@ -1250,19 +1213,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Cours.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="476">
           <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1518#1529#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Agents/AgentEtudiant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        <state relative-caret-position="323">
+          <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1271,6 +1233,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
           <caret line="42" column="44" lean-forward="false" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ontologies/Connaissance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -16,10 +16,10 @@ public class Connaissance {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="idConnaissance", unique=true, nullable=false)
     int id_connaissance ;
-    @Column(name="levelConnaissance", length=450)
+    @Column(name="NiveauConnaissance", length=450)
     int level_connaissance ;
 
-    @Column(name="descriptionConnaissance", length=450)
+    @Column(name="DescriptionConnaissance", length=450)
     String description_connsaissance ;
 
     @ManyToOne(fetch=FetchType.LAZY)
