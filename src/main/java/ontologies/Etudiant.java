@@ -16,6 +16,14 @@ import java.util.Set;
 )
 public class Etudiant  implements Concept {
 
+    public Set<Connaissance> getConnaissances() {
+        return connaissances;
+    }
+
+    public void setConnaissances(Set<Connaissance> connaissances) {
+        this.connaissances = connaissances;
+    }
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="idEtudiant", unique=true, nullable=false)
@@ -29,6 +37,9 @@ public class Etudiant  implements Concept {
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="etudiant_asso_test")
     private Set<TestEtudiant> testetudiant = new HashSet<TestEtudiant>(0);
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="etudiant_connaissance")
+    private Set<Connaissance> connaissances = new HashSet<Connaissance>(0);
 
     public int getId_etudiant() {
         return id_etudiant;

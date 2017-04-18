@@ -35,6 +35,9 @@ public class Cours implements Concept,Serializable {
     @Column(name="DureeCours")
     private int duree;
 
+    @Column(name="DescriptionCours")
+    private String description ;
+
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumns( {
             @JoinColumn(name="Enseignant_idEnseignant", referencedColumnName="idEnseignant", nullable=true) } )
@@ -48,6 +51,9 @@ public class Cours implements Concept,Serializable {
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="cours_asso")
     private Set<CoursEtudiant> coursetudiant = new HashSet<CoursEtudiant>(0);
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="cours_ressource")
+    private Set<Ressource> ressources = new HashSet<Ressource>(0);
 
 
     /**
@@ -134,5 +140,21 @@ public class Cours implements Concept,Serializable {
                 ", duree=" + duree +
                 ", enseignant=" + enseignant.getNom_enseignant() +
                 '}';
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Set<Ressource> getRessources() {
+        return ressources;
+    }
+
+    public void setRessources(Set<Ressource> ressources) {
+        this.ressources = ressources;
     }
 }

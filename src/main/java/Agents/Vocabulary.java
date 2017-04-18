@@ -27,6 +27,7 @@ public interface Vocabulary {
    public static final String COURS_SEANCES = "seances";
    public static final String COURS_TESTS = "tests";
    public static final String COURS_COURSETUDIANT= "coursetudiant";
+   public static final String COURS_DESCRIPTION= "description";
 
    //test
    public static final String TEST = "Test";
@@ -56,6 +57,7 @@ public interface Vocabulary {
    public static final String PASSER_TEST = "Passer_test";
    public static final String PASSER_TEST_ID_TEST = "id_test";
    public static final String PASSER_TEST_ID_ETUDIANT = "id_etudiant";
+   public static final String PASSER_TEST_NOTE = "note";
 
    //probleme
    public static final String PROBLEM = "Problem";
@@ -106,6 +108,18 @@ public interface Vocabulary {
    public static final String TEST_ETUDIANT_NOTE ="note_test";
 
 
+   //Ressource
+   public static final String RESSOURCE = "Ressource";
+   public static final String RESSOURCE_ID = "id_ressource";
+   public static final String RESSOURCE_TYPE = "type_ressource";
+   public static final String RESSOURCE_DESCRIPTION = "description_ressource";
+
+
+   //Connaissance
+   public static final String CONNAISSANCE = "Connaissance";
+   public static final String CONNAISSANCE_ID = "id_ressource";
+   public static final String CONNAISSANCE_LEVEL = "level_connaissance";
+   public static final String CONNAISSANCE_DESCRIPTION = "description_connaissance";
 
 
 }

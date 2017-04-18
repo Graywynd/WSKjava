@@ -17,6 +17,8 @@
         <mapping class="ontologies.Test" />
         <mapping class="ontologies.Enseignant" />
         <mapping class="ontologies.CoursEtudiant" />
+        <mapping class="ontologies.Ressource" />
+        <mapping class="ontologies.Connaissance" />
 
 
     </session-factory>

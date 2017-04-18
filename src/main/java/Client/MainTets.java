@@ -22,6 +22,7 @@ import java.util.List;
  *
  * @author saif
  */
+
 public class MainTets {
 
     /**
@@ -33,6 +34,7 @@ public class MainTets {
 		Profile p = new ProfileImpl();
 		p.setParameter(Profile.MAIN_HOST, "localhost");
 		p.setParameter(Profile.GUI, "true");
+		p.setParameter(Profile.LOCAL_PORT,"12344");
 		ContainerController cc = rt.createMainContainer(p);
 		AgentController ac;
 

@@ -15,6 +15,7 @@ public class PasserTest implements AgentAction {
     
     private int id_test;
     private int id_etudiant;
+    private String  note ;
 
     /**
      * @return the id_test
@@ -43,7 +44,13 @@ public class PasserTest implements AgentAction {
     public void setId_etudiant(int id_etudiant) {
         this.id_etudiant = id_etudiant;
     }
-    
-    
-    
+
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
 }
