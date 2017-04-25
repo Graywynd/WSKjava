@@ -71,7 +71,7 @@ public interface Vocabulary {
 
    //list cours enseignant
    public static final String LIST_COURS_ENSEIGNANT = "List_cours_enseignant";
-   public static final String LIST_COURS_ENSEIGNANT_ID = "";
+   public static final String LIST_COURS_ENSEIGNANT_ID = "id_enseignant";
 
 
    //etudiant

@@ -17,14 +17,9 @@ import jade.content.lang.*;
 import jade.content.lang.sl.*;
 import jade.content.onto.*;
 import jade.content.onto.basic.*;
-import jade.util.leap.*;
-import jade.gui.*;
 
 import jade.util.leap.ArrayList;
 import ontologies.*;
-
-import java.util.*;
-import java.util.List;
 
 
 /**
@@ -37,7 +32,8 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
     private AID server;
     private Codec codec = new SLCodec();
    private Ontology ontology = OntologyWSK.getInstance();
-    
+
+
      protected void setup() {
 // ------------------------
 
@@ -45,24 +41,62 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
       getContentManager().registerLanguage(codec);
       getContentManager().registerOntology(ontology);
 
+         setEnabledO2ACommunication(true, 10);
 
 
-         addBehaviour(new OneShotBehaviour() {
+      /*   addBehaviour(new OneShotBehaviour() {
 
              @Override
              public void action() {
                  infoCours(4);
              }
+         }); */
+
+         addBehaviour(new jade.core.behaviours.CyclicBehaviour() {
+
+             public void action() {
+                 // Retrieve the first object in the queue and print it on
+                 // the standard output
+                 Object obj = getO2AObject();
+                 if(obj != null) {
+                     System.out.println("Got an object from the queue: [" + obj + "]");
+                     if(obj.equals("createcours")){
+                         addBehaviour(new OneShotBehaviour() {
+
+                             @Override
+                             public void action() {
+                                 createCours("cours2",1);
+                             }
+                         });
+                     }
+                     if(obj.equals("listcours")){
+                         addBehaviour(new OneShotBehaviour() {
+
+                             @Override
+                             public void action() {
+                                 listCours(1);
+                             }
+                         });
+                     }
+                 }
+                 else
+                     block();
+             }
+
          });
 
 
-         
-     
-      
-   }
+
+
+
+
+
+     }
 
    protected void takeDown() {
 // ---------------------------  Terminate the program properly
+
+       setEnabledO2ACommunication(false, 0);
 
        System.out.println(getLocalName() + " is now shutting down.");
        
@@ -171,6 +205,7 @@ public class AgentEnseignant extends Agent implements Vocabulary,IAgentEnseignan
 
                       ArrayList lcs = (ArrayList) result.getValue() ;
                       java.util.ArrayList<Cours> L = (java.util.ArrayList<Cours>)lcs.toList();
+
                       for (Cours c:L) {
                           System.out.println(c);
                       }
